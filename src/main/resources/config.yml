@@ -1,0 +1,83 @@
+# AiMob configuration. MiniMessage tags are supported in every message value.
+# The endpoint should be the server root for the chosen provider. OpenAI's default
+# path is appended automatically; Ollama uses /api/chat.
+provider: openai
+base-url: "https://api.openai.com/v1"
+# Leave blank to read AIMOB_API_KEY from the server environment.
+api-key: ""
+model: "gpt-4o-mini"
+system-prompt: "You are a friendly Minecraft character named <mob_name>. Keep replies concise and in character."
+temperature: 0.7
+max-tokens: 250
+request-timeout-seconds: 30
+max-history-messages: 12
+max-concurrent-requests: 4
+max-message-length: 500
+message-cooldown-seconds: 2
+
+chat:
+  exit-word: "exit"
+  timeout-seconds: 120
+  max-distance: 16.0
+  clear-history-on-session-end: true
+  # dialog currently uses the chat fallback when text-input dialogs aren't exposed.
+  ui-mode: chat
+
+protection:
+  # survival-only permits creative players to damage the mob; all-players blocks them too.
+  mode: survival-only
+
+mob:
+  default-name: "Guide"
+  type: VILLAGER
+  custom-name: "<gold><bold><mob_name></bold></gold>"
+  name-visible: true
+  glowing: false
+  noai: true
+  baby: false
+  silent: false
+  gravity: false
+  # Persistence and no distance despawn are enforced by the plugin.
+  # Optional equipment. Use valid Material names; empty values skip a slot.
+  equipment:
+    helmet: ""
+    chestplate: ""
+    leggings: ""
+    boots: ""
+    main-hand: ""
+    off-hand: ""
+
+stick:
+  material: STICK
+  name: "<red><bold>AI Mob Removal Stick</bold></red>"
+  lore:
+    - "<gray>Sneak + right-click an AI mob to remove it.</gray>"
+  custom-model-data: -1
+
+messages:
+  prefix: "<dark_gray>[<gold>AiMob</gold>]</dark_gray> "
+  no-permission: "<red>You don't have permission to do that.</red>"
+  players-only: "<red>This command can only be used in game.</red>"
+  usage: "<yellow>Usage: /aimob <spawn [name]|list|remove <name>|stick|reload></yellow>"
+  spawned: "<green>Spawned <mob_name> (ID <id>).</green>"
+  spawn-failed: "<red>Could not spawn that mob type.</red>"
+  list-empty: "<yellow>No AI mobs are currently loaded.</yellow>"
+  list-entry: "<gray><mob_name> <dark_gray>(<id>)</dark_gray></gray>"
+  removed: "<green>Removed <mob_name>.</green>"
+  not-found: "<red>No loaded AI mob named <mob_name> was found.</red>"
+  stick-given: "<green>Removal stick added to your inventory.</green>"
+  reloaded: "<green>Configuration reloaded.</green>"
+  chat-start: "<gray>Chatting with <mob_name>. Type <exit_word> to leave.</gray>"
+  chat-exit: "<gray>Chat session ended.</gray>"
+  chat-timeout: "<gray>Your chat with the mob ended after inactivity.</gray>"
+  chat-distance: "<gray>You moved too far away; chat session ended.</gray>"
+  chat-logout: "<gray>Chat session ended.</gray>"
+  chat-no-permission: "<red>You cannot chat with AI mobs.</red>"
+  chat-too-long: "<red>Your message is too long.</red>"
+  chat-cooldown: "<yellow>Please wait before sending another message.</yellow>"
+  chat-busy: "<yellow>The mob is busy. Try again shortly.</yellow>"
+  chat-thinking: "<gray><mob_name> is thinking...</gray>"
+  chat-error: "<red>The mob couldn't respond right now. Please try again later.</red>"
+  chat-reply: "<gray><mob_name></gray> <dark_gray>»</dark_gray> <white><message></white>"
+  mob-removed-stick: "<green>You removed <mob_name>.</green>"
+  dialog-fallback: "<gray>Text-input dialogs are unavailable; using chat mode.</gray>"

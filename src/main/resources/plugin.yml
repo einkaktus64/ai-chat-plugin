@@ -1,0 +1,19 @@
+name: AiMob
+version: '${version}'
+main: dev.aimob.AiMobPlugin
+api-version: '26.3'
+folia-supported: true
+description: Spawn protected mobs that can chat with players through AI providers.
+author: AiMob contributors
+commands:
+  aimob:
+    description: Manage AI mobs and chat sessions.
+    usage: /aimob <spawn|list|remove|stick|reload>
+    permission: aimob.admin
+permissions:
+  aimob.admin:
+    description: Allows managing AI mobs and issuing removal sticks.
+    default: op
+  aimob.chat:
+    description: Allows starting and using AI mob chat sessions.
+    default: true
