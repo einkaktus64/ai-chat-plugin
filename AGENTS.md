@@ -8,7 +8,7 @@ This is a Java 25 Paper/Folia plugin built with Gradle Kotlin DSL. Production Ja
 
 - `./gradlew build` compiles the plugin and creates `build/libs/AiMob-<version>.jar`.
 - `./gradlew clean build` performs a clean build.
-- Use Java 25 and the committed Gradle 9.1 wrapper. The Paper API coordinate is configured by `paperApiGroup`, `paperApiArtifact`, and `paperApiVersion` in `gradle.properties`.
+- Use Java 25 and the committed Gradle 9.9.2 wrapper. The Paper API coordinate is configured by `paperApiGroup`, `paperApiArtifact`, and `paperApiVersion` in `gradle.properties`.
 
 There is no test suite yet. If adding tests, use Gradle's `src/test/java` layout and document any test dependencies and commands here.
 

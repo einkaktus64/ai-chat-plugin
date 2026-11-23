@@ -6,13 +6,13 @@ AiMob is a Paper/Folia plugin that spawns a configurable protected mob and lets 
 
 - Minecraft Java 26.3 server (Paper or Folia)
 - Java 25 runtime
-- The committed Gradle 9.1 wrapper (Java 25 is needed to build)
+- The committed Gradle 9.9.2 wrapper (Java 25 is needed to build)
 
 The build defaults to Paper's documented `io.papermc.paper:paper-api:26.3.build.+`. To compile against Folia's API instead, set `paperApiGroup=dev.folia` and `paperApiArtifact=folia-api`; check the current stable build at [PaperMC's Maven repository](https://repo.papermc.io/repository/maven-public/). The API version is controlled by `paperApiVersion` in `gradle.properties`.
 
 ## Build
 
-Build with `./gradlew build`. The plugin jar is written to `build/libs/AiMob-<version>.jar`. The wrapper can be regenerated with `gradle wrapper --gradle-version 9.1.0`. For a local server, copy the jar into `plugins/`, start the server, set the provider and API credentials in `plugins/AiMob/config.yml`, then use `/aimob spawn Guide`.
+Build with `./gradlew build`. The plugin jar is written to `build/libs/AiMob-<version>.jar`. The wrapper can be regenerated with `gradle wrapper --gradle-version 9.9.2`. For a local server, copy the jar into `plugins/`, start the server, set the provider and API credentials in `plugins/AiMob/config.yml`, then use `/aimob spawn Guide`.
 
 ## Commands
 
