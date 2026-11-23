@@ -26,6 +26,6 @@ jobs:
         run: ./gradlew build
       - uses: actions/upload-artifact@v7
         with:
-          name: AiMob
           path: build/libs/AiMob-*.jar
+          archive: false
           if-no-files-found: error
